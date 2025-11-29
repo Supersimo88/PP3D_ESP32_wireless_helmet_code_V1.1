@@ -20,13 +20,13 @@ Servo servo3;
 uint8_t soundBoardMAC[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
 
 // ---------------- SERVO CONFIG -------------------
-int servo1Close = 0;
-int servo2Close = 180;
-int servo3Close = 0;
+int servo1Close = 20;
+int servo2Close = 160;
+int servo3Close = 170;
 
-int servo1Open = 180;
-int servo2Open = 0;
-int servo3Open = 180;
+int servo1Open = 160;
+int servo2Open = 20;
+int servo3Open = 110;
 
 enum Position { OPEN_POSITION, CLOSE_POSITION };
 Position currentPosition1 = CLOSE_POSITION;
@@ -43,9 +43,9 @@ bool detachServo3AtEnd = true;
 unsigned long lastServoUpdate = 0;
 const unsigned long servoUpdateInterval = 20;
 
-int servo1Target = 0;
-int servo2Target = 180;
-int servo3Target = 180;
+int servo1Target = 20;
+int servo2Target = 160;
+int servo3Target = 170;
 int servo1Position = 0;
 int servo2Position = 180;
 int servo3Position = 180;
@@ -169,7 +169,7 @@ void initializeClosedPosition() {
 
   servo1.write(servo1Position);
   servo2.write(servo2Position);
-  servo3.write(servo2Position);
+  servo3.write(servo3Position);
 
   currentPosition1 = CLOSE_POSITION;
   currentPosition2 = CLOSE_POSITION;
